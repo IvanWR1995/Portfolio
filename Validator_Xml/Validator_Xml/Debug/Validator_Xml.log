@@ -1,0 +1,68 @@
+﻿Build started 13.05.2015 16:17:26.
+     1>Project "C:\Users\Шумаков Иван\Documents\Visual Studio 2013\Projects\Validator_Xml\Validator_Xml\Validator_Xml.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt Xml_Validator.c
+         Xml_Validator.c
+     1>c:\users\шумаков иван\documents\visual studio 2013\projects\validator_xml\validator_xml\xml_validator.c(91): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 12.0\vc\include\wchar.h(1042) : see declaration of 'wcscpy'
+     1>c:\users\шумаков иван\documents\visual studio 2013\projects\validator_xml\validator_xml\xml_validator.c(100): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 12.0\vc\include\wchar.h(1042) : see declaration of 'wcscpy'
+     1>c:\users\шумаков иван\documents\visual studio 2013\projects\validator_xml\validator_xml\xml_validator.c(298): warning C4029: declared formal parameter list different from definition
+     1>c:\users\шумаков иван\documents\visual studio 2013\projects\validator_xml\validator_xml\xml_validator.c(336): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 12.0\vc\include\wchar.h(1042) : see declaration of 'wcscpy'
+     1>c:\users\шумаков иван\documents\visual studio 2013\projects\validator_xml\validator_xml\xml_validator.c(352): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 12.0\vc\include\wchar.h(1042) : see declaration of 'wcscpy'
+     1>c:\users\шумаков иван\documents\visual studio 2013\projects\validator_xml\validator_xml\xml_validator.c(361): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 12.0\vc\include\wchar.h(1042) : see declaration of 'wcscpy'
+     1>c:\users\шумаков иван\documents\visual studio 2013\projects\validator_xml\validator_xml\xml_validator.c(367): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 12.0\vc\include\wchar.h(1042) : see declaration of 'wcscpy'
+     1>c:\users\шумаков иван\documents\visual studio 2013\projects\validator_xml\validator_xml\xml_validator.c(446): warning C4996: '_wfopen': This function or variable may be unsafe. Consider using _wfopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 12.0\vc\include\stdio.h(590) : see declaration of '_wfopen'
+     1>c:\users\шумаков иван\documents\visual studio 2013\projects\validator_xml\validator_xml\xml_validator.c(606): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 12.0\vc\include\wchar.h(1042) : see declaration of 'wcscpy'
+     1>c:\users\шумаков иван\documents\visual studio 2013\projects\validator_xml\validator_xml\xml_validator.c(618): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 12.0\vc\include\wchar.h(1042) : see declaration of 'wcscpy'
+     1>c:\users\шумаков иван\documents\visual studio 2013\projects\validator_xml\validator_xml\xml_validator.c(646): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 12.0\vc\include\wchar.h(1042) : see declaration of 'wcscpy'
+     1>c:\users\шумаков иван\documents\visual studio 2013\projects\validator_xml\validator_xml\xml_validator.c(649): warning C4172: returning address of local variable or temporary
+     1>c:\users\шумаков иван\documents\visual studio 2013\projects\validator_xml\validator_xml\xml_validator.c(655): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 12.0\vc\include\wchar.h(1042) : see declaration of 'wcscpy'
+     1>c:\users\шумаков иван\documents\visual studio 2013\projects\validator_xml\validator_xml\xml_validator.c(657): warning C4172: returning address of local variable or temporary
+     1>c:\users\шумаков иван\documents\visual studio 2013\projects\validator_xml\validator_xml\xml_validator.c(718): warning C4996: '_wfopen': This function or variable may be unsafe. Consider using _wfopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 12.0\vc\include\stdio.h(590) : see declaration of '_wfopen'
+     1>c:\users\шумаков иван\documents\visual studio 2013\projects\validator_xml\validator_xml\xml_validator.c(729): warning C4133: 'return' : incompatible types - from 'char [1]' to 'wchar_t *'
+     1>c:\users\шумаков иван\documents\visual studio 2013\projects\validator_xml\validator_xml\xml_validator.c(730): warning C4996: '_wfopen': This function or variable may be unsafe. Consider using _wfopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 12.0\vc\include\stdio.h(590) : see declaration of '_wfopen'
+     1>c:\users\шумаков иван\documents\visual studio 2013\projects\validator_xml\validator_xml\xml_validator.c(741): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 12.0\vc\include\wchar.h(1042) : see declaration of 'wcscpy'
+     1>c:\users\шумаков иван\documents\visual studio 2013\projects\validator_xml\validator_xml\xml_validator.c(742): warning C4172: returning address of local variable or temporary
+     1>c:\users\шумаков иван\documents\visual studio 2013\projects\validator_xml\validator_xml\xml_validator.c(745): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 12.0\vc\include\wchar.h(1042) : see declaration of 'wcscpy'
+     1>c:\users\шумаков иван\documents\visual studio 2013\projects\validator_xml\validator_xml\xml_validator.c(746): warning C4172: returning address of local variable or temporary
+     1>c:\users\шумаков иван\documents\visual studio 2013\projects\validator_xml\validator_xml\xml_validator.c(749): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 12.0\vc\include\wchar.h(1042) : see declaration of 'wcscpy'
+     1>c:\users\шумаков иван\documents\visual studio 2013\projects\validator_xml\validator_xml\xml_validator.c(750): warning C4172: returning address of local variable or temporary
+     1>c:\users\шумаков иван\documents\visual studio 2013\projects\validator_xml\validator_xml\xml_validator.c(797): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 12.0\vc\include\wchar.h(1042) : see declaration of 'wcscpy'
+     1>c:\users\шумаков иван\documents\visual studio 2013\projects\validator_xml\validator_xml\xml_validator.c(799): warning C4172: returning address of local variable or temporary
+     1>c:\users\шумаков иван\documents\visual studio 2013\projects\validator_xml\validator_xml\xml_validator.c(803): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 12.0\vc\include\wchar.h(1042) : see declaration of 'wcscpy'
+     1>c:\users\шумаков иван\documents\visual studio 2013\projects\validator_xml\validator_xml\xml_validator.c(805): warning C4172: returning address of local variable or temporary
+     1>c:\users\шумаков иван\documents\visual studio 2013\projects\validator_xml\validator_xml\xml_validator.c(809): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 12.0\vc\include\wchar.h(1042) : see declaration of 'wcscpy'
+     1>c:\users\шумаков иван\documents\visual studio 2013\projects\validator_xml\validator_xml\xml_validator.c(811): warning C4172: returning address of local variable or temporary
+     1>c:\users\шумаков иван\documents\visual studio 2013\projects\validator_xml\validator_xml\xml_validator.c(815): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 12.0\vc\include\wchar.h(1042) : see declaration of 'wcscpy'
+     1>c:\users\шумаков иван\documents\visual studio 2013\projects\validator_xml\validator_xml\xml_validator.c(817): warning C4172: returning address of local variable or temporary
+     1>c:\users\шумаков иван\documents\visual studio 2013\projects\validator_xml\validator_xml\xml_validator.c(821): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 12.0\vc\include\wchar.h(1042) : see declaration of 'wcscpy'
+     1>c:\users\шумаков иван\documents\visual studio 2013\projects\validator_xml\validator_xml\xml_validator.c(823): warning C4172: returning address of local variable or temporary
+     1>c:\users\шумаков иван\documents\visual studio 2013\projects\validator_xml\validator_xml\xml_validator.c(826): warning C4172: returning address of local variable or temporary
+       Link:
+         C:\Program Files\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Шумаков Иван\Documents\Visual Studio 2013\Projects\Validator_Xml\Debug\Validator_Xml.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Шумаков Иван\Documents\Visual Studio 2013\Projects\Validator_Xml\Debug\Validator_Xml.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Шумаков Иван\Documents\Visual Studio 2013\Projects\Validator_Xml\Debug\Validator_Xml.lib" /MACHINE:X86 Debug\Xml_Validator.obj
+         Validator_Xml.vcxproj -> C:\Users\Шумаков Иван\Documents\Visual Studio 2013\Projects\Validator_Xml\Debug\Validator_Xml.exe
+     1>Done Building Project "C:\Users\Шумаков Иван\Documents\Visual Studio 2013\Projects\Validator_Xml\Validator_Xml\Validator_Xml.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:03.07

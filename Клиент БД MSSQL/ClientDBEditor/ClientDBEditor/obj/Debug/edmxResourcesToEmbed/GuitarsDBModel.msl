@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GuitarsDBModelStoreContainer" CdmEntityContainer="GuitarsDBModelEntities">
+    <EntitySetMapping Name="TableAdresses">
+      <EntityTypeMapping TypeName="GuitarsDBModel.TableAdress">
+        <MappingFragment StoreEntitySet="TableAdress">
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="House" ColumnName="House" />
+          <ScalarProperty Name="id_contact" ColumnName="id_contact" />
+          <ScalarProperty Name="id" ColumnName="id_adress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableColorSetsGuitars">
+      <EntityTypeMapping TypeName="GuitarsDBModel.TableColorSetsGuitar">
+        <MappingFragment StoreEntitySet="TableColorSetsGuitar">
+          <ScalarProperty Name="id_color_set" ColumnName="id_color_set" />
+          <ScalarProperty Name="id_guitar" ColumnName="id_guitar" />
+          <ScalarProperty Name="id" ColumnName="id_set" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableContacts">
+      <EntityTypeMapping TypeName="GuitarsDBModel.TableContact">
+        <MappingFragment StoreEntitySet="TableContacts">
+          <ScalarProperty Name="id" ColumnName="id_contact" />
+          <ScalarProperty Name="id_manufacturer" ColumnName="id_manufacturer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableDescriptionGuitars">
+      <EntityTypeMapping TypeName="GuitarsDBModel.TableDescriptionGuitar">
+        <MappingFragment StoreEntitySet="TableDescriptionGuitar">
+          <ScalarProperty Name="id" ColumnName="id_guitar" />
+          <ScalarProperty Name="NumberOfStrings" ColumnName="NumberOfStrings" />
+          <ScalarProperty Name="MountNeck" ColumnName="MountNeck" />
+          <ScalarProperty Name="BodyStyle" ColumnName="BodyStyle" />
+          <ScalarProperty Name="BodyMaterial" ColumnName="BodyMaterial" />
+          <ScalarProperty Name="BridgeType" ColumnName="BridgeType" />
+          <ScalarProperty Name="NeckMaterial" ColumnName="NeckMaterial" />
+          <ScalarProperty Name="LiningMaterial" ColumnName="LiningMaterial" />
+          <ScalarProperty Name="NumberFrets" ColumnName="NumberFrets" />
+          <ScalarProperty Name="PickupScheme" ColumnName="PickupScheme" />
+          <ScalarProperty Name="PickupSwitch" ColumnName="PickupSwitch" />
+          <ScalarProperty Name="id_PickupManufacturer" ColumnName="id_PickupManufacturer" />
+          <ScalarProperty Name="NumberVolumeControls" ColumnName="NumberVolumeControls" />
+          <ScalarProperty Name="NumberToneControls" ColumnName="NumberToneControls" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableExGuitarColors">
+      <EntityTypeMapping TypeName="GuitarsDBModel.TableExGuitarColor">
+        <MappingFragment StoreEntitySet="TableExGuitarColor">
+          <ScalarProperty Name="BodyColor" ColumnName="BodyColor" />
+          <ScalarProperty Name="ColorAccessories" ColumnName="ColorAccessories" />
+          <ScalarProperty Name="id" ColumnName="id_color_set" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableGuitars">
+      <EntityTypeMapping TypeName="GuitarsDBModel.TableGuitar">
+        <MappingFragment StoreEntitySet="TableGuitars">
+          <ScalarProperty Name="id" ColumnName="id_guitar" />
+          <ScalarProperty Name="TypeOfGuitar" ColumnName="TypeOfGuitar" />
+          <ScalarProperty Name="id_manufacturer" ColumnName="id_manufacturer" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="CreationYearModel" ColumnName="CreationYearModel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableManufacturerInfoes">
+      <EntityTypeMapping TypeName="GuitarsDBModel.TableManufacturerInfo">
+        <MappingFragment StoreEntitySet="TableManufacturerInfo">
+          <ScalarProperty Name="id" ColumnName="id_manufacturer" />
+          <ScalarProperty Name="ManufacturerName" ColumnName="ManufacturerName" />
+          <ScalarProperty Name="ManufacturerWebPage" ColumnName="ManufacturerWebPage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TablePhoneNumbers">
+      <EntityTypeMapping TypeName="GuitarsDBModel.TablePhoneNumber">
+        <MappingFragment StoreEntitySet="TablePhoneNumbers">
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="TypePhone" ColumnName="TypePhone" />
+          <ScalarProperty Name="id_adress" ColumnName="id_adress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="CreateProc" FunctionName="GuitarsDBModel.Store.CreateProc" />
+    <FunctionImportMapping FunctionImportName="CreateBackup" FunctionName="GuitarsDBModel.Store.CreateBackup" />
+  </EntityContainerMapping>
+</Mapping>

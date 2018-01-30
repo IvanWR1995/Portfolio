@@ -1,0 +1,12 @@
+c:\users\шумаков иван\documents\visual studio 2013\Projects\RuntimeExecSharpCode\RuntimeExecSharpCode\bin\Debug\RuntimeExecSharpCode.exe.config
+c:\users\шумаков иван\documents\visual studio 2013\Projects\RuntimeExecSharpCode\RuntimeExecSharpCode\bin\Debug\RuntimeExecSharpCode.exe
+c:\users\шумаков иван\documents\visual studio 2013\Projects\RuntimeExecSharpCode\RuntimeExecSharpCode\bin\Debug\RuntimeExecSharpCode.pdb
+c:\users\шумаков иван\documents\visual studio 2013\Projects\RuntimeExecSharpCode\RuntimeExecSharpCode\obj\Debug\RuntimeExecSharpCode.csprojResolveAssemblyReference.cache
+c:\users\шумаков иван\documents\visual studio 2013\Projects\RuntimeExecSharpCode\RuntimeExecSharpCode\obj\Debug\RuntimeExecSharpCode.exe
+c:\users\шумаков иван\documents\visual studio 2013\Projects\RuntimeExecSharpCode\RuntimeExecSharpCode\obj\Debug\RuntimeExecSharpCode.pdb
+C:\Users\Шумаков Иван\Repositories\Portfolio\RuntimeExecSharpCode\RuntimeExecSharpCode\bin\Debug\RuntimeExecSharpCode.exe.config
+C:\Users\Шумаков Иван\Repositories\Portfolio\RuntimeExecSharpCode\RuntimeExecSharpCode\obj\Debug\RuntimeExecSharpCode.exe
+C:\Users\Шумаков Иван\Repositories\Portfolio\RuntimeExecSharpCode\RuntimeExecSharpCode\obj\Debug\RuntimeExecSharpCode.pdb
+C:\Users\Шумаков Иван\Repositories\Portfolio\RuntimeExecSharpCode\RuntimeExecSharpCode\bin\Debug\RuntimeExecSharpCode.exe
+C:\Users\Шумаков Иван\Repositories\Portfolio\RuntimeExecSharpCode\RuntimeExecSharpCode\bin\Debug\RuntimeExecSharpCode.pdb
+C:\Users\Шумаков Иван\Repositories\Portfolio\RuntimeExecSharpCode\RuntimeExecSharpCode\obj\Debug\RuntimeExecSharpCode.csprojResolveAssemblyReference.cache

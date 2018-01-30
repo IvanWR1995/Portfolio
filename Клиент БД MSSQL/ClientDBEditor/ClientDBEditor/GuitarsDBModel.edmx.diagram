@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8f6e6d7747ae41aead84a9cf5041b768" Name="Diagram1" DisplayType="false" ShowGrid="false">
+        <EntityTypeShape EntityType="GuitarsDBModel.TableAdress" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GuitarsDBModel.TableColorSetsGuitar" Width="1.5" PointX="5.25" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GuitarsDBModel.TableContact" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GuitarsDBModel.TableDescriptionGuitar" Width="1.5" PointX="5.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="GuitarsDBModel.TableExGuitarColor" Width="1.5" PointX="3" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GuitarsDBModel.TableGuitar" Width="1.5" PointX="3" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GuitarsDBModel.TableManufacturerInfo" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GuitarsDBModel.TablePhoneNumber" Width="1.5" PointX="7.5" PointY="4.125" IsExpanded="true" />
+        <AssociationConnector Association="GuitarsDBModel.FK__TableAdre__id_co__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="GuitarsDBModel.FK__TablePhon__id_ad__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="GuitarsDBModel.FK__TableColo__id_co__24927208" ManuallyRouted="false" />
+        <AssociationConnector Association="GuitarsDBModel.FK_TableColorSetsGuitar_TableGuitars" ManuallyRouted="false" />
+        <AssociationConnector Association="GuitarsDBModel.FK_Manufacturer_id" ManuallyRouted="false" />
+        <AssociationConnector Association="GuitarsDBModel.FK__TableDesc__id_gu__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="GuitarsDBModel.FK__TableDesc__id_Pi__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="GuitarsDBModel.FK__TableGuit__id_ma__2F10007B" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

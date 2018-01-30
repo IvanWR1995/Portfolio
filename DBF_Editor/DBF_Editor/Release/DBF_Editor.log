@@ -1,0 +1,51 @@
+﻿Build started 13.05.2015 16:15:06.
+     1>Project "C:\Users\Шумаков Иван\Documents\Visual Studio 2013\Projects\DBF_Editor\DBF_Editor\DBF_Editor.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt main.c
+         main.c
+     1>main.c(128): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>main.c(141): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>main.c(155): warning C4047: 'return' : 'List **' differs in levels of indirection from 'List *'
+     1>main.c(228): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>main.c(246): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
+     1>main.c(247): warning C4996: '_wfopen': This function or variable may be unsafe. Consider using _wfopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files\Microsoft Visual Studio 12.0\VC\include\stdio.h(590) : see declaration of '_wfopen'
+     1>main.c(295): warning C4018: '<' : signed/unsigned mismatch
+     1>main.c(339): warning C4996: '_wfopen': This function or variable may be unsafe. Consider using _wfopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files\Microsoft Visual Studio 12.0\VC\include\stdio.h(590) : see declaration of '_wfopen'
+     1>main.c(356): warning C4996: '_wfopen': This function or variable may be unsafe. Consider using _wfopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files\Microsoft Visual Studio 12.0\VC\include\stdio.h(590) : see declaration of '_wfopen'
+     1>main.c(427): warning C4996: '_wfopen': This function or variable may be unsafe. Consider using _wfopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files\Microsoft Visual Studio 12.0\VC\include\stdio.h(590) : see declaration of '_wfopen'
+     1>main.c(442): warning C4996: '_wfopen': This function or variable may be unsafe. Consider using _wfopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files\Microsoft Visual Studio 12.0\VC\include\stdio.h(590) : see declaration of '_wfopen'
+     1>main.c(484): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files\Microsoft Visual Studio 12.0\VC\include\stdio.h(283) : see declaration of 'scanf'
+     1>main.c(495): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files\Microsoft Visual Studio 12.0\VC\include\stdio.h(283) : see declaration of 'scanf'
+     1>main.c(525): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files\Microsoft Visual Studio 12.0\VC\include\stdio.h(283) : see declaration of 'scanf'
+     1>main.c(529): warning C4013: 'getch' undefined; assuming extern returning int
+     1>main.c(533): warning C4018: '>' : signed/unsigned mismatch
+     1>main.c(545): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files\Microsoft Visual Studio 12.0\VC\include\stdio.h(283) : see declaration of 'scanf'
+     1>main.c(565): warning C4047: '=' : 'List *' differs in levels of indirection from 'List **'
+     1>main.c(576): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files\Microsoft Visual Studio 12.0\VC\include\stdio.h(283) : see declaration of 'scanf'
+     1>main.c(604): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files\Microsoft Visual Studio 12.0\VC\include\stdio.h(283) : see declaration of 'scanf'
+     1>main.c(612): warning C4018: '>' : signed/unsigned mismatch
+     1>main.c(620): warning C4047: '=' : 'List *' differs in levels of indirection from 'List **'
+     1>main.c(666): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+       Link:
+         C:\Program Files\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Шумаков Иван\Documents\Visual Studio 2013\Projects\DBF_Editor\Release\DBF_Editor.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Шумаков Иван\Documents\Visual Studio 2013\Projects\DBF_Editor\Release\DBF_Editor.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Шумаков Иван\Documents\Visual Studio 2013\Projects\DBF_Editor\Release\DBF_Editor.lib" /MACHINE:X86 /SAFESEH Release\main.obj
+         Generating code
+     1>c:\users\шумаков иван\documents\visual studio 2013\projects\dbf_editor\dbf_editor\main.c(233): warning C4715: 'List_Insert' : not all control paths return a value
+         Finished generating code
+         DBF_Editor.vcxproj -> C:\Users\Шумаков Иван\Documents\Visual Studio 2013\Projects\DBF_Editor\Release\DBF_Editor.exe
+     1>Done Building Project "C:\Users\Шумаков Иван\Documents\Visual Studio 2013\Projects\DBF_Editor\DBF_Editor\DBF_Editor.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:15.24

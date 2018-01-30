@@ -1,0 +1,596 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Alias="Self" Namespace="GuitarsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008">
+        <EntityType Name="TableAdress">
+          <Key>
+            <PropertyRef Name="id_adress" />
+          </Key>
+          <Property Name="Country" Nullable="false" MaxLength="100" Type="nvarchar" />
+          <Property Name="City" Nullable="false" MaxLength="100" Type="nvarchar" />
+          <Property Name="Street" Nullable="false" MaxLength="250" Type="nvarchar" />
+          <Property Name="House" Nullable="false" MaxLength="10" Type="nvarchar" />
+          <Property Name="id_contact" Type="smallint" />
+          <Property Name="id_adress" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+        </EntityType>
+        <EntityType Name="TableColorSetsGuitar">
+          <Key>
+            <PropertyRef Name="id_set" />
+          </Key>
+          <Property Name="id_color_set" Nullable="false" Type="int" />
+          <Property Name="id_guitar" Nullable="false" Type="int" />
+          <Property Name="id_set" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+        </EntityType>
+        <EntityType Name="TableContacts">
+          <Key>
+            <PropertyRef Name="id_contact" />
+          </Key>
+          <Property Name="id_contact" Nullable="false" StoreGeneratedPattern="Identity" Type="smallint" />
+          <Property Name="id_manufacturer" Nullable="false" Type="smallint" />
+        </EntityType>
+        <EntityType Name="TableDescriptionGuitar">
+          <Key>
+            <PropertyRef Name="id_guitar" />
+          </Key>
+          <Property Name="id_guitar" Nullable="false" Type="int" />
+          <Property Name="NumberOfStrings" Nullable="false" Type="smallint" />
+          <Property Name="MountNeck" Nullable="false" MaxLength="250" Type="nvarchar" />
+          <Property Name="BodyStyle" Nullable="false" MaxLength="250" Type="nvarchar" />
+          <Property Name="BodyMaterial" Nullable="false" MaxLength="250" Type="nvarchar" />
+          <Property Name="BridgeType" Nullable="false" MaxLength="250" Type="nvarchar" />
+          <Property Name="NeckMaterial" Nullable="false" MaxLength="250" Type="nvarchar" />
+          <Property Name="LiningMaterial" Nullable="false" MaxLength="250" Type="nvarchar" />
+          <Property Name="NumberFrets" Nullable="false" Type="smallint" />
+          <Property Name="PickupScheme" MaxLength="20" Type="nvarchar" />
+          <Property Name="PickupSwitch" MaxLength="100" Type="nvarchar" />
+          <Property Name="id_PickupManufacturer" Type="smallint" />
+          <Property Name="NumberVolumeControls" Type="smallint" />
+          <Property Name="NumberToneControls" Type="smallint" />
+        </EntityType>
+        <EntityType Name="TableExGuitarColor">
+          <Key>
+            <PropertyRef Name="id_color_set" />
+          </Key>
+          <Property Name="BodyColor" Nullable="false" MaxLength="250" Type="nvarchar" />
+          <Property Name="ColorAccessories" Nullable="false" MaxLength="250" Type="nvarchar" />
+          <Property Name="id_color_set" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+        </EntityType>
+        <EntityType Name="TableGuitars">
+          <Key>
+            <PropertyRef Name="id_guitar" />
+          </Key>
+          <Property Name="id_guitar" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="TypeOfGuitar" Nullable="false" MaxLength="250" Type="nvarchar" />
+          <Property Name="id_manufacturer" Nullable="false" Type="smallint" />
+          <Property Name="Model" Nullable="false" MaxLength="300" Type="nvarchar" />
+          <Property Name="CreationYearModel" MaxLength="4" Type="char" />
+        </EntityType>
+        <EntityType Name="TableManufacturerInfo">
+          <Key>
+            <PropertyRef Name="id_manufacturer" />
+          </Key>
+          <Property Name="id_manufacturer" Nullable="false" StoreGeneratedPattern="Identity" Type="smallint" />
+          <Property Name="ManufacturerName" Nullable="false" MaxLength="250" Type="nvarchar" />
+          <Property Name="ManufacturerWebPage" Nullable="false" MaxLength="250" Type="nvarchar" />
+        </EntityType>
+        <EntityType Name="TablePhoneNumbers">
+          <Key>
+            <PropertyRef Name="Number" />
+          </Key>
+          <Property Name="Number" Nullable="false" MaxLength="20" Type="nvarchar" />
+          <Property Name="TypePhone" Nullable="false" MaxLength="100" Type="nvarchar" />
+          <Property Name="id_adress" Nullable="false" Type="int" />
+        </EntityType>
+        <Association Name="FK__TableAdre__id_co__3E52440B">
+          <End Type="Self.TableContacts" Multiplicity="0..1" Role="TableContacts" />
+          <End Type="Self.TableAdress" Multiplicity="*" Role="TableAdress" />
+          <ReferentialConstraint>
+            <Principal Role="TableContacts">
+              <PropertyRef Name="id_contact" />
+            </Principal>
+            <Dependent Role="TableAdress">
+              <PropertyRef Name="id_contact" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TableColo__id_co__24927208">
+          <End Type="Self.TableExGuitarColor" Multiplicity="1" Role="TableExGuitarColor" />
+          <End Type="Self.TableColorSetsGuitar" Multiplicity="*" Role="TableColorSetsGuitar" />
+          <ReferentialConstraint>
+            <Principal Role="TableExGuitarColor">
+              <PropertyRef Name="id_color_set" />
+            </Principal>
+            <Dependent Role="TableColorSetsGuitar">
+              <PropertyRef Name="id_color_set" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TableDesc__id_gu__32E0915F">
+          <End Type="Self.TableGuitars" Multiplicity="1" Role="TableGuitars" />
+          <End Type="Self.TableDescriptionGuitar" Multiplicity="0..1" Role="TableDescriptionGuitar" />
+          <ReferentialConstraint>
+            <Principal Role="TableGuitars">
+              <PropertyRef Name="id_guitar" />
+            </Principal>
+            <Dependent Role="TableDescriptionGuitar">
+              <PropertyRef Name="id_guitar" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TableDesc__id_Pi__33D4B598">
+          <End Type="Self.TableManufacturerInfo" Multiplicity="0..1" Role="TableManufacturerInfo" />
+          <End Type="Self.TableDescriptionGuitar" Multiplicity="*" Role="TableDescriptionGuitar" />
+          <ReferentialConstraint>
+            <Principal Role="TableManufacturerInfo">
+              <PropertyRef Name="id_manufacturer" />
+            </Principal>
+            <Dependent Role="TableDescriptionGuitar">
+              <PropertyRef Name="id_PickupManufacturer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TableGuit__id_ma__2F10007B">
+          <End Type="Self.TableManufacturerInfo" Multiplicity="1" Role="TableManufacturerInfo" />
+          <End Type="Self.TableGuitars" Multiplicity="*" Role="TableGuitars" />
+          <ReferentialConstraint>
+            <Principal Role="TableManufacturerInfo">
+              <PropertyRef Name="id_manufacturer" />
+            </Principal>
+            <Dependent Role="TableGuitars">
+              <PropertyRef Name="id_manufacturer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TablePhon__id_ad__3F466844">
+          <End Type="Self.TableAdress" Multiplicity="1" Role="TableAdress" />
+          <End Type="Self.TablePhoneNumbers" Multiplicity="*" Role="TablePhoneNumbers" />
+          <ReferentialConstraint>
+            <Principal Role="TableAdress">
+              <PropertyRef Name="id_adress" />
+            </Principal>
+            <Dependent Role="TablePhoneNumbers">
+              <PropertyRef Name="id_adress" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Manufacturer_id">
+          <End Type="Self.TableManufacturerInfo" Multiplicity="1" Role="TableManufacturerInfo" />
+          <End Type="Self.TableContacts" Multiplicity="*" Role="TableContacts" />
+          <ReferentialConstraint>
+            <Principal Role="TableManufacturerInfo">
+              <PropertyRef Name="id_manufacturer" />
+            </Principal>
+            <Dependent Role="TableContacts">
+              <PropertyRef Name="id_manufacturer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TableColorSetsGuitar_TableGuitars">
+          <End Type="Self.TableGuitars" Multiplicity="1" Role="TableGuitars" />
+          <End Type="Self.TableColorSetsGuitar" Multiplicity="*" Role="TableColorSetsGuitar" />
+          <ReferentialConstraint>
+            <Principal Role="TableGuitars">
+              <PropertyRef Name="id_guitar" />
+            </Principal>
+            <Dependent Role="TableColorSetsGuitar">
+              <PropertyRef Name="id_guitar" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="CreateBackup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="CreateProc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="GuitarsDBModelStoreContainer">
+          <EntitySet Name="TableAdress" EntityType="Self.TableAdress" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableColorSetsGuitar" EntityType="Self.TableColorSetsGuitar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableContacts" EntityType="Self.TableContacts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableDescriptionGuitar" EntityType="Self.TableDescriptionGuitar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableExGuitarColor" EntityType="Self.TableExGuitarColor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableGuitars" EntityType="Self.TableGuitars" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableManufacturerInfo" EntityType="Self.TableManufacturerInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TablePhoneNumbers" EntityType="Self.TablePhoneNumbers" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__TableAdre__id_co__3E52440B" Association="Self.FK__TableAdre__id_co__3E52440B">
+            <End EntitySet="TableContacts" Role="TableContacts" />
+            <End EntitySet="TableAdress" Role="TableAdress" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TableColo__id_co__24927208" Association="Self.FK__TableColo__id_co__24927208">
+            <End EntitySet="TableExGuitarColor" Role="TableExGuitarColor" />
+            <End EntitySet="TableColorSetsGuitar" Role="TableColorSetsGuitar" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TableDesc__id_gu__32E0915F" Association="Self.FK__TableDesc__id_gu__32E0915F">
+            <End EntitySet="TableGuitars" Role="TableGuitars" />
+            <End EntitySet="TableDescriptionGuitar" Role="TableDescriptionGuitar" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TableDesc__id_Pi__33D4B598" Association="Self.FK__TableDesc__id_Pi__33D4B598">
+            <End EntitySet="TableManufacturerInfo" Role="TableManufacturerInfo" />
+            <End EntitySet="TableDescriptionGuitar" Role="TableDescriptionGuitar" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TableGuit__id_ma__2F10007B" Association="Self.FK__TableGuit__id_ma__2F10007B">
+            <End EntitySet="TableManufacturerInfo" Role="TableManufacturerInfo" />
+            <End EntitySet="TableGuitars" Role="TableGuitars" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TablePhon__id_ad__3F466844" Association="Self.FK__TablePhon__id_ad__3F466844">
+            <End EntitySet="TableAdress" Role="TableAdress" />
+            <End EntitySet="TablePhoneNumbers" Role="TablePhoneNumbers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Manufacturer_id" Association="Self.FK_Manufacturer_id">
+            <End EntitySet="TableManufacturerInfo" Role="TableManufacturerInfo" />
+            <End EntitySet="TableContacts" Role="TableContacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TableColorSetsGuitar_TableGuitars" Association="Self.FK_TableColorSetsGuitar_TableGuitars">
+            <End EntitySet="TableGuitars" Role="TableGuitars" />
+            <End EntitySet="TableColorSetsGuitar" Role="TableColorSetsGuitar" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GuitarsDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TableAdress">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="Country" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Street" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="House" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="id_contact" Type="Int16" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="TableContact" Relationship="Self.FK__TableAdre__id_co__3E52440B" FromRole="TableAdress" ToRole="TableContacts" />
+          <NavigationProperty Name="TablePhoneNumbers" Relationship="Self.FK__TablePhon__id_ad__3F466844" FromRole="TableAdress" ToRole="TablePhoneNumbers" />
+        </EntityType>
+        <EntityType Name="TableColorSetsGuitar">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id_color_set" Type="Int32" Nullable="false" />
+          <Property Name="id_guitar" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="TableExGuitarColor" Relationship="Self.FK__TableColo__id_co__24927208" FromRole="TableColorSetsGuitar" ToRole="TableExGuitarColor" />
+          <NavigationProperty Name="TableGuitar" Relationship="Self.FK_TableColorSetsGuitar_TableGuitars" FromRole="TableColorSetsGuitar" ToRole="TableGuitars" />
+        </EntityType>
+        <EntityType Name="TableContact">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_manufacturer" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="TableAdresses" Relationship="Self.FK__TableAdre__id_co__3E52440B" FromRole="TableContacts" ToRole="TableAdress" />
+          <NavigationProperty Name="TableManufacturerInfo" ToRole="TableManufacturerInfo" FromRole="TableContacts" Relationship="Self.FK_Manufacturer_id" />
+        </EntityType>
+        <EntityType Name="TableDescriptionGuitar">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="NumberOfStrings" Type="Int16" Nullable="false" />
+          <Property Name="MountNeck" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BodyStyle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BodyMaterial" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BridgeType" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NeckMaterial" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LiningMaterial" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NumberFrets" Type="Int16" Nullable="false" />
+          <Property Name="PickupScheme" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PickupSwitch" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="id_PickupManufacturer" Type="Int16" />
+          <Property Name="NumberVolumeControls" Type="Int16" />
+          <Property Name="NumberToneControls" Type="Int16" />
+          <NavigationProperty Name="TableGuitar" Relationship="Self.FK__TableDesc__id_gu__32E0915F" FromRole="TableDescriptionGuitar" ToRole="TableGuitars" />
+          <NavigationProperty Name="TableManufacturerInfo" Relationship="Self.FK__TableDesc__id_Pi__33D4B598" FromRole="TableDescriptionGuitar" ToRole="TableManufacturerInfo" />
+        </EntityType>
+        <EntityType Name="TableExGuitarColor">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="BodyColor" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ColorAccessories" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="TableColorSetsGuitars" Relationship="Self.FK__TableColo__id_co__24927208" FromRole="TableExGuitarColor" ToRole="TableColorSetsGuitar" />
+        </EntityType>
+        <EntityType Name="TableGuitar">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeOfGuitar" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="id_manufacturer" Type="Int16" Nullable="false" />
+          <Property Name="Model" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreationYearModel" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="TableColorSetsGuitars" Relationship="Self.FK_TableColorSetsGuitar_TableGuitars" FromRole="TableGuitars" ToRole="TableColorSetsGuitar" />
+          <NavigationProperty Name="TableDescriptionGuitar" Relationship="Self.FK__TableDesc__id_gu__32E0915F" FromRole="TableGuitars" ToRole="TableDescriptionGuitar" />
+          <NavigationProperty Name="TableManufacturerInfo" Relationship="Self.FK__TableGuit__id_ma__2F10007B" FromRole="TableGuitars" ToRole="TableManufacturerInfo" />
+        </EntityType>
+        <EntityType Name="TableManufacturerInfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ManufacturerName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ManufacturerWebPage" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="TableContacts" ToRole="TableContacts" FromRole="TableManufacturerInfo" Relationship="Self.FK_Manufacturer_id" />
+          <NavigationProperty Name="TableDescriptionGuitars" Relationship="Self.FK__TableDesc__id_Pi__33D4B598" FromRole="TableManufacturerInfo" ToRole="TableDescriptionGuitar" />
+          <NavigationProperty Name="TableGuitars" Relationship="Self.FK__TableGuit__id_ma__2F10007B" FromRole="TableManufacturerInfo" ToRole="TableGuitars" />
+        </EntityType>
+        <EntityType Name="TablePhoneNumber">
+          <Key>
+            <PropertyRef Name="Number" />
+          </Key>
+          <Property Name="Number" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TypePhone" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="id_adress" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TableAdress" Relationship="Self.FK__TablePhon__id_ad__3F466844" FromRole="TablePhoneNumbers" ToRole="TableAdress" />
+        </EntityType>
+        <Association Name="FK__TableAdre__id_co__3E52440B">
+          <End Role="TableContacts" Type="Self.TableContact" Multiplicity="0..1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TableAdress" Type="Self.TableAdress" Multiplicity="*" ></End>
+          <ReferentialConstraint>
+            <Principal Role="TableContacts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TableAdress">
+              <PropertyRef Name="id_contact" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TablePhon__id_ad__3F466844">
+          <End Role="TableAdress" Type="Self.TableAdress" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TablePhoneNumbers" Type="Self.TablePhoneNumber" Multiplicity="*" ></End>
+          <ReferentialConstraint>
+            <Principal Role="TableAdress">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TablePhoneNumbers">
+              <PropertyRef Name="id_adress" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TableColo__id_co__24927208">
+          <End Role="TableExGuitarColor" Type="Self.TableExGuitarColor" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TableColorSetsGuitar" Type="Self.TableColorSetsGuitar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TableExGuitarColor">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TableColorSetsGuitar">
+              <PropertyRef Name="id_color_set" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TableColorSetsGuitar_TableGuitars">
+          <End Role="TableGuitars" Type="Self.TableGuitar" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TableColorSetsGuitar" Type="Self.TableColorSetsGuitar" Multiplicity="*" ></End>
+          <ReferentialConstraint>
+            <Principal Role="TableGuitars">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TableColorSetsGuitar">
+              <PropertyRef Name="id_guitar" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Manufacturer_id">
+          <End Role="TableManufacturerInfo" Type="Self.TableManufacturerInfo" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TableContacts" Type="Self.TableContact" Multiplicity="*" ></End>
+          <ReferentialConstraint>
+            <Principal Role="TableManufacturerInfo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TableContacts">
+              <PropertyRef Name="id_manufacturer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TableDesc__id_gu__32E0915F">
+          <End Role="TableGuitars" Type="Self.TableGuitar" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TableDescriptionGuitar" Type="Self.TableDescriptionGuitar" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="TableGuitars">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TableDescriptionGuitar">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TableDesc__id_Pi__33D4B598">
+          <End Role="TableManufacturerInfo" Type="Self.TableManufacturerInfo" Multiplicity="0..1" />
+          <End Role="TableDescriptionGuitar" Type="Self.TableDescriptionGuitar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TableManufacturerInfo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TableDescriptionGuitar">
+              <PropertyRef Name="id_PickupManufacturer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TableGuit__id_ma__2F10007B">
+          <End Role="TableManufacturerInfo" Type="Self.TableManufacturerInfo" Multiplicity="1" />
+          <End Role="TableGuitars" Type="Self.TableGuitar" Multiplicity="*" ></End>
+          <ReferentialConstraint>
+            <Principal Role="TableManufacturerInfo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TableGuitars">
+              <PropertyRef Name="id_manufacturer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GuitarsDBModelEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TableAdresses" EntityType="Self.TableAdress" />
+          <EntitySet Name="TableColorSetsGuitars" EntityType="Self.TableColorSetsGuitar" />
+          <EntitySet Name="TableContacts" EntityType="Self.TableContact" />
+          <EntitySet Name="TableDescriptionGuitars" EntityType="Self.TableDescriptionGuitar" />
+          <EntitySet Name="TableExGuitarColors" EntityType="Self.TableExGuitarColor" />
+          <EntitySet Name="TableGuitars" EntityType="Self.TableGuitar" />
+          <EntitySet Name="TableManufacturerInfoes" EntityType="Self.TableManufacturerInfo" />
+          <EntitySet Name="TablePhoneNumbers" EntityType="Self.TablePhoneNumber" />
+          <AssociationSet Name="FK__TableAdre__id_co__3E52440B" Association="Self.FK__TableAdre__id_co__3E52440B">
+            <End Role="TableContacts" EntitySet="TableContacts" />
+            <End Role="TableAdress" EntitySet="TableAdresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TablePhon__id_ad__3F466844" Association="Self.FK__TablePhon__id_ad__3F466844">
+            <End Role="TableAdress" EntitySet="TableAdresses" />
+            <End Role="TablePhoneNumbers" EntitySet="TablePhoneNumbers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TableColo__id_co__24927208" Association="Self.FK__TableColo__id_co__24927208">
+            <End Role="TableExGuitarColor" EntitySet="TableExGuitarColors" />
+            <End Role="TableColorSetsGuitar" EntitySet="TableColorSetsGuitars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TableColorSetsGuitar_TableGuitars" Association="Self.FK_TableColorSetsGuitar_TableGuitars">
+            <End Role="TableGuitars" EntitySet="TableGuitars" />
+            <End Role="TableColorSetsGuitar" EntitySet="TableColorSetsGuitars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Manufacturer_id" Association="Self.FK_Manufacturer_id">
+            <End Role="TableManufacturerInfo" EntitySet="TableManufacturerInfoes" />
+            <End Role="TableContacts" EntitySet="TableContacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TableDesc__id_gu__32E0915F" Association="Self.FK__TableDesc__id_gu__32E0915F">
+            <End Role="TableGuitars" EntitySet="TableGuitars" />
+            <End Role="TableDescriptionGuitar" EntitySet="TableDescriptionGuitars" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TableDesc__id_Pi__33D4B598" Association="Self.FK__TableDesc__id_Pi__33D4B598">
+            <End Role="TableManufacturerInfo" EntitySet="TableManufacturerInfoes" />
+            <End Role="TableDescriptionGuitar" EntitySet="TableDescriptionGuitars" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TableGuit__id_ma__2F10007B" Association="Self.FK__TableGuit__id_ma__2F10007B">
+            <End Role="TableManufacturerInfo" EntitySet="TableManufacturerInfoes" />
+            <End Role="TableGuitars" EntitySet="TableGuitars" />
+          </AssociationSet>
+          <FunctionImport Name="CreateProc" />
+          <FunctionImport Name="CreateBackup" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GuitarsDBModelStoreContainer" CdmEntityContainer="GuitarsDBModelEntities">
+          <EntitySetMapping Name="TableAdresses">
+            <EntityTypeMapping TypeName="GuitarsDBModel.TableAdress">
+              <MappingFragment StoreEntitySet="TableAdress">
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="House" ColumnName="House" />
+                <ScalarProperty Name="id_contact" ColumnName="id_contact" />
+                <ScalarProperty Name="id" ColumnName="id_adress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableColorSetsGuitars">
+            <EntityTypeMapping TypeName="GuitarsDBModel.TableColorSetsGuitar">
+              <MappingFragment StoreEntitySet="TableColorSetsGuitar">
+                <ScalarProperty Name="id_color_set" ColumnName="id_color_set" />
+                <ScalarProperty Name="id_guitar" ColumnName="id_guitar" />
+                <ScalarProperty Name="id" ColumnName="id_set" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableContacts">
+            <EntityTypeMapping TypeName="GuitarsDBModel.TableContact">
+              <MappingFragment StoreEntitySet="TableContacts">
+                <ScalarProperty Name="id" ColumnName="id_contact" />
+                <ScalarProperty Name="id_manufacturer" ColumnName="id_manufacturer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableDescriptionGuitars">
+            <EntityTypeMapping TypeName="GuitarsDBModel.TableDescriptionGuitar">
+              <MappingFragment StoreEntitySet="TableDescriptionGuitar">
+                <ScalarProperty Name="id" ColumnName="id_guitar" />
+                <ScalarProperty Name="NumberOfStrings" ColumnName="NumberOfStrings" />
+                <ScalarProperty Name="MountNeck" ColumnName="MountNeck" />
+                <ScalarProperty Name="BodyStyle" ColumnName="BodyStyle" />
+                <ScalarProperty Name="BodyMaterial" ColumnName="BodyMaterial" />
+                <ScalarProperty Name="BridgeType" ColumnName="BridgeType" />
+                <ScalarProperty Name="NeckMaterial" ColumnName="NeckMaterial" />
+                <ScalarProperty Name="LiningMaterial" ColumnName="LiningMaterial" />
+                <ScalarProperty Name="NumberFrets" ColumnName="NumberFrets" />
+                <ScalarProperty Name="PickupScheme" ColumnName="PickupScheme" />
+                <ScalarProperty Name="PickupSwitch" ColumnName="PickupSwitch" />
+                <ScalarProperty Name="id_PickupManufacturer" ColumnName="id_PickupManufacturer" />
+                <ScalarProperty Name="NumberVolumeControls" ColumnName="NumberVolumeControls" />
+                <ScalarProperty Name="NumberToneControls" ColumnName="NumberToneControls" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableExGuitarColors">
+            <EntityTypeMapping TypeName="GuitarsDBModel.TableExGuitarColor">
+              <MappingFragment StoreEntitySet="TableExGuitarColor">
+                <ScalarProperty Name="BodyColor" ColumnName="BodyColor" />
+                <ScalarProperty Name="ColorAccessories" ColumnName="ColorAccessories" />
+                <ScalarProperty Name="id" ColumnName="id_color_set" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableGuitars">
+            <EntityTypeMapping TypeName="GuitarsDBModel.TableGuitar">
+              <MappingFragment StoreEntitySet="TableGuitars">
+                <ScalarProperty Name="id" ColumnName="id_guitar" />
+                <ScalarProperty Name="TypeOfGuitar" ColumnName="TypeOfGuitar" />
+                <ScalarProperty Name="id_manufacturer" ColumnName="id_manufacturer" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="CreationYearModel" ColumnName="CreationYearModel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableManufacturerInfoes">
+            <EntityTypeMapping TypeName="GuitarsDBModel.TableManufacturerInfo">
+              <MappingFragment StoreEntitySet="TableManufacturerInfo">
+                <ScalarProperty Name="id" ColumnName="id_manufacturer" />
+                <ScalarProperty Name="ManufacturerName" ColumnName="ManufacturerName" />
+                <ScalarProperty Name="ManufacturerWebPage" ColumnName="ManufacturerWebPage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TablePhoneNumbers">
+            <EntityTypeMapping TypeName="GuitarsDBModel.TablePhoneNumber">
+              <MappingFragment StoreEntitySet="TablePhoneNumbers">
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="TypePhone" ColumnName="TypePhone" />
+                <ScalarProperty Name="id_adress" ColumnName="id_adress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="CreateProc" FunctionName="GuitarsDBModel.Store.CreateProc" />
+          <FunctionImportMapping FunctionImportName="CreateBackup" FunctionName="GuitarsDBModel.Store.CreateBackup" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
